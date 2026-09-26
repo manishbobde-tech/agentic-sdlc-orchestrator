@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentic-sdlc-orchestrator"
+version = "0.1.0"
+description = "Portfolio scaffold: a multi-persona agentic SDLC pipeline (planner, architect, coder, reviewer, tester) orchestrated with LangGraph, plus a golden-dataset eval harness."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Manish Bobde" }]
+dependencies = [
+    "langgraph>=0.2",
+    "langchain-core>=0.3",
+    "pydantic>=2",
+    "pyyaml>=6",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
